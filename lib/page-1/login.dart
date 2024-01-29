@@ -23,6 +23,7 @@ class _LoginState extends State<login> {
   {
     try{
       _auth.signInWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text);
+     Navigator.push(context, MaterialPageRoute(builder: (context) => const dashboard()));
     }
     catch(e)
     {
@@ -72,15 +73,7 @@ class _LoginState extends State<login> {
       height: 32.48 * fem,
       child: TextButton(
         onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            print("success");
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const homepage(),
-              ),
-            );
-          }
+          
         },
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero,
